@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   public registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.createLoginForm();
     this.createRegisterForm();
   }
@@ -38,14 +40,14 @@ export class LoginComponent implements OnInit {
 
   createLoginForm() {
     this.loginForm = this.formBuilder.group({
-      userName: [''],
-      password: [''],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
     })
   }
   createRegisterForm() {
     this.registerForm = this.formBuilder.group({
-      userName: [''],
-      password: [''],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
       confirmPassword: [''],
     })
   }
@@ -55,7 +57,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    if(this.loginForm.valid) {
+      this.authService.login(this.loginForm.value).subscribe(res => {
+        this.router.navigateByUrl('dashboard');
+      });
+    }
   }
 
 }

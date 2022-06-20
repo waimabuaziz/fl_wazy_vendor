@@ -21,8 +21,9 @@ import { SettingModule } from './components/setting/setting.module';;
 import { ReportsModule } from './components/reports/reports.module';
 import { AuthModule } from './components/auth/auth.module';
 import { ApiService } from './Services/api.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SettlementsModule } from './components/settlements/settlements.module';
+import { JwtInterceptor } from './interceptors/jwt-interceptor';
  
 
 @NgModule({
@@ -54,6 +55,9 @@ import { SettlementsModule } from './components/settlements/settlements.module';
   ],
   providers: [
     ApiService,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

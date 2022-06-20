@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://212.24.103.71/projects/wazy_vendor/public/api'
 };
 
 /*
