@@ -1,0 +1,5 @@
+.DS_Store
+
+.angular
+node_modules
+/temp/

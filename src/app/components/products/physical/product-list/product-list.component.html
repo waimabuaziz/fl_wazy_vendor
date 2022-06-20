@@ -1,0 +1,83 @@
+<div class="container-fluid">
+
+    <button class="btn btn-white" type="button" (click)="ProductAdd.openModal()" >
+    <i class="fa fa-th"></i>
+</button>
+
+ 
+<app-modal-add-product #quickView  ></app-modal-add-product>
+
+<app-product-add  #productAdd   >    </app-product-add>
+
+
+<div class="row">
+    <div class="col-xl-5 col-sm-5 col-md-5 col-lg-5"></div>
+    <div class="col-xl-2 col-sm-2 col-md-2 col-lg-2 btn-group pull-right">
+      <button class="btn btn-white" type="button"(click)="onDisplayModeChange(1)"
+                    [ngClass]="{'btn-primary active': displayMode === 1}" >
+                    <i class="fa fa-th"></i>
+      </button>
+      <button class="btn btn-white" type="button"  (click)="onDisplayModeChange(2)"
+                    [ngClass]="{'btn-primary active': displayMode === 2}" >
+                    <i class="fa fa-list"></i>
+      </button>
+     </div>
+     <div class="col-xl-5 col-sm-5 col-md-5 col-lg-5"></div>
+
+  </div>
+<br>
+
+    <div class="row products-admin ratio_asos"  *ngIf="displayMode === 1">
+        <div class="col-xl-3 col-sm-6" *ngFor="let product of product_list">
+            <div class="card">
+                <div class="card-body product-box">
+                    <div class="img-wrapper">
+                        <div class="lable-block"><span class="lable3" *ngIf="product.tag == 'new'">new</span> <span
+                                class="lable4" *ngIf="product.sale == 'on sale'">on sale</span></div>
+                        <div class="front">
+                            <a href="javascript:void(0)"><img [src]="[product.img]"
+                                    class="img-fluid blur-up lazyload bg-img" alt=""></a>
+                            <div class="product-hover">
+                                <ul>
+                                    <li>
+                                        <button class="btn" type="button" data-original-title="" title="" (click)="QuickView.openModal()" ><i
+                                                class="icon-pencil-alt"></i>  </button>
+                                    </li>
+                                    <li>
+                                        <button class="btn" type="button" data-toggle="modal"
+                                            data-target="#exampleModalCenter" data-original-title="" title=""><i
+                                                class="icon-trash"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-detail">
+                        <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+                        <a href="javascript:void(0)">
+                            <h6>{{product.product_title}}</h6>
+                        </a>
+                        <h4>{{product.discount}} <del>{{product.price}}</del></h4>
+                        <ul class="color-variant">
+                            <li class="bg-light0"></li>
+                            <li class="bg-light1"></li>
+                            <li class="bg-light2"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div id="batchDelete" class="category-table custom-datatable" *ngIf="displayMode === 2">
+      <div class="table-responsive">
+          <ng2-smart-table [settings]="settings" [source]="product_list"></ng2-smart-table>
+      </div>
+  </div> -->
+
+
+
+</div>

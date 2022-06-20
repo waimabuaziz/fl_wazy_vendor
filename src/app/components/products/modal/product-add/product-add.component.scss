@@ -1,0 +1,26 @@
+ 
+ 
+ 
+  
+ 
+.modal-content {
+ 
+    -webkit-animation: modal-animation 0.5s ease;
+    animation: modal-animation 0.5s ease;
+    background-color: white;
+  }
+  
+  @keyframes modal-animation {
+    0% {
+        transform: scale(0)
+    }
+    25% {
+        transform: scale(0.7)
+    }
+    75% {
+        transform: scale(1.01)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
