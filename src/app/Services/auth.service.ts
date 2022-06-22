@@ -44,7 +44,20 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     let authToken = localStorage.getItem(this.lsTokenKey);
-    return authToken !== null ? true : false;
+
+    if(authToken !== null) {
+      // check expiry
+      const jwtPayload = JSON.parse(window.atob(authToken.split('.')[1]));
+      
+      // If expired
+      if(Date.now() >= jwtPayload.exp * 1000) {
+        return false;
+      }
+
+      return true;
+    }
+
+    return false;
   }
 
   get token() {

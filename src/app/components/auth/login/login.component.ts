@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if(this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(res => {
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('dashboard/statistics');
       });
     }
   }

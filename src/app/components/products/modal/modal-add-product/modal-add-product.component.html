@@ -1,21 +1,83 @@
-<ng-template class="theme-modal" #quickView let-modal>
-    <div class="modal-content quick-view-modal">
+<ng-template class="modal theme-modal" #quickView let-modal>
+    <div class="modal-content bg-white quick-view-modal">
         <div class="modal-body">
             <button type="button" class="close"  >
                 <span aria-hidden="true">&times;</span>
             </button>
-            <div class="row">
+            <h5 class="mb-3">Edit Product</h5>
+            <div class="row mb-2">
+                <div class="col-sm-6 col-xs-12">
+                    <label>Product name</label>
+                    <input type="text" class="form-control" />
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <label>Product code</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-sm-6 col-xs-12">
+                    <label>Category</label>
+                    <select class="form-control">
+                        <option value="">Select Category</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <label>Price</label>
+                    <input type="number" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-12">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-sm-6 col-xs-12">
+                    <label>Manufacturer</label>
+                    <select class="form-control">
+                        <option value="">Select Manufacturer</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <label>Av in stock</label>
+                    <input type="number" class="form-control" />
+                </div>
+            </div>
+
+            <div>
+                <button class="btn btn-primary">Save</button>
+            </div>
+            <!-- <div class="row">
                 <div class="col-lg-6  col-xs-12">
                     <div class="quick-view-img">
                     
 
-                        <div _ngcontent-serverapp-c131="" class="row"><div _ngcontent-serverapp-c131="" class="col-lg-6 col-xs-12"><div _ngcontent-serverapp-c131="" class="quick-view-img"><img _ngcontent-serverapp-c131="" class="img-fluid" src="assets/images/product/fashion/39.jpg" alt="yellow"></div></div><div _ngcontent-serverapp-c131="" class="col-lg-6 rtl-text"><div _ngcontent-serverapp-c131="" class="product-right"><h2 _ngcontent-serverapp-c131="">Xt291m</h2><h3 _ngcontent-serverapp-c131="">$87.00 <del _ngcontent-serverapp-c131="" class="ng-star-inserted"><span _ngcontent-serverapp-c131="" class="money">$145.00</span></del><!--bindings={
-                            "ng-reflect-ng-if": "40"
-                          }--></h3><div _ngcontent-serverapp-c131="" class="border-product"><h6 _ngcontent-serverapp-c131="" class="product-title">product details</h6><p _ngcontent-serverapp-c131="">Makita is the innovation leader in brushless motor technology, and the 18V LXT® Brushless 2-Piece Combo Kit (model XT291M) gives you two brushless solutions for drilling, driving and fastening. Each t...</p></div><div _ngcontent-serverapp-c131="" class="product-description border-product"><h5 _ngcontent-serverapp-c131="" class="avalibility ng-star-inserted"><span _ngcontent-serverapp-c131="">In Stock</span></h5><!--bindings={
-                            "ng-reflect-ng-if": "true"
-                          }--><!--bindings={
-                            "ng-reflect-ng-if": "false"
-                          }--><h6 _ngcontent-serverapp-c131="" class="product-title">quantity</h6><div _ngcontent-serverapp-c131="" class="qty-box"><div _ngcontent-serverapp-c131="" class="input-group"><span _ngcontent-serverapp-c131="" class="input-group-prepend"><button _ngcontent-serverapp-c131="" type="button" data-type="minus" class="btn quantity-left-minus"><i _ngcontent-serverapp-c131="" class="ti-angle-left"></i></button></span><input _ngcontent-serverapp-c131="" type="text" name="quantity" disabled="" class="form-control input-number"><span _ngcontent-serverapp-c131="" class="input-group-prepend"><button _ngcontent-serverapp-c131="" type="button" data-type="plus" class="btn quantity-right-plus"><i _ngcontent-serverapp-c131="" class="ti-angle-right"></i></button></span></div></div></div><div _ngcontent-serverapp-c131="" class="product-buttons"><a _ngcontent-serverapp-c131="" href="javascript:void(0)" class="btn btn-solid">add to cart</a><a _ngcontent-serverapp-c131="" class="btn btn-solid" ng-reflect-router-link="/shop/product/left/sidebar/,XT" href="/shop/product/left/sidebar/XT291M">view detail</a></div></div></div></div>
+                        <div _ngcontent-serverapp-c131="" class="row">
+                            <div _ngcontent-serverapp-c131="" class="col-lg-6 col-xs-12">
+                                <div _ngcontent-serverapp-c131="" class="quick-view-img">
+                                    <img _ngcontent-serverapp-c131="" class="img-fluid" src="assets/images/product/fashion/39.jpg" alt="yellow">
+                                </div>
+                            </div>
+                            <div _ngcontent-serverapp-c131="" class="col-lg-6 rtl-text">
+                                <div _ngcontent-serverapp-c131="" class="product-right">
+                                    <h2 _ngcontent-serverapp-c131="">Xt291m</h2>
+                                    <h3 _ngcontent-serverapp-c131="">$87.00 
+                                        <del _ngcontent-serverapp-c131="" class="ng-star-inserted">
+                                            <span _ngcontent-serverapp-c131="" class="money">$145.00</span>
+                                        </del></h3>
+                          <div _ngcontent-serverapp-c131="" class="border-product">
+                            <h6 _ngcontent-serverapp-c131="" class="product-title">product details</h6>
+                            <p _ngcontent-serverapp-c131="">Makita is the innovation leader in brushless motor technology, and the 18V LXT® Brushless 2-Piece Combo Kit (model XT291M) gives you two brushless solutions for drilling, driving and fastening. Each t...</p>
+                        </div>
+                        <div _ngcontent-serverapp-c131="" class="product-description border-product"><h5 _ngcontent-serverapp-c131="" class="avalibility ng-star-inserted"><span _ngcontent-serverapp-c131="">In Stock</span></h5><h6 _ngcontent-serverapp-c131="" class="product-title">quantity</h6><div _ngcontent-serverapp-c131="" class="qty-box"><div _ngcontent-serverapp-c131="" class="input-group"><span _ngcontent-serverapp-c131="" class="input-group-prepend"><button _ngcontent-serverapp-c131="" type="button" data-type="minus" class="btn quantity-left-minus"><i _ngcontent-serverapp-c131="" class="ti-angle-left"></i></button></span><input _ngcontent-serverapp-c131="" type="text" name="quantity" disabled="" class="form-control input-number"><span _ngcontent-serverapp-c131="" class="input-group-prepend"><button _ngcontent-serverapp-c131="" type="button" data-type="plus" class="btn quantity-right-plus"><i _ngcontent-serverapp-c131="" class="ti-angle-right"></i></button></span></div></div></div><div _ngcontent-serverapp-c131="" class="product-buttons"><a _ngcontent-serverapp-c131="" href="javascript:void(0)" class="btn btn-solid">add to cart</a><a _ngcontent-serverapp-c131="" class="btn btn-solid" ng-reflect-router-link="/shop/product/left/sidebar/,XT" href="/shop/product/left/sidebar/XT291M">view detail</a></div></div></div></div>
 
 
                           
@@ -24,7 +86,7 @@
                 <div class="col-lg-6 rtl-text">
  
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </ng-template>
